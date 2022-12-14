@@ -1,30 +1,33 @@
-﻿
+﻿// user should input two numbers to get their private
 Console.WriteLine("Please input first number");
 string firstNumber = Console.ReadLine();
+Console.WriteLine("Please input second number");
+string secondNumber = Console.ReadLine();
+if (double.TryParse(firstNumber, out var x)) //check if can convert input into number
+{
 
-    try
+}
+else
+{
+    Console.WriteLine("Wrong input, program is finished");
+}
+if (double.TryParse(secondNumber, out var y)) //check if can convert second input into number
+{
+
+}
+else
+{
+    Console.WriteLine("Wrong input, program is finished");
+}
+if (y == 0)
     {
-        int test = Convert.ToInt32(firstNumber);
-        Console.WriteLine("ok, ");
+        Console.WriteLine("It's forbidden to divide with zero!!!");
     }
-    catch (FormatException)
-    {
-        Console.WriteLine("Input string is invalid.");
-    }
-    x = Convert.ToInt32(firstNumber);
-
-
-//Console.WriteLine("Please input second number");
-//string secondNumber = Console.ReadLine();
-//       try {
-//           int y = Convert.ToInt32(secondNumber);
-//          Console.WriteLine("Private (/) is, ");
-//          int numSecond = y;
-//      }
-//      catch (FormatException) {
-//          Console.WriteLine("Input string is invalid.");
-//      }
-//Console.WriteLine(numFirst);        
-//double result = (numFirst / numSecond);
-
-//Console.WriteLine(result);
+else {
+    if (y != 0 & x != 0)
+{
+    double result = x / y;
+    Console.WriteLine(result);
+    
+}
+}    
