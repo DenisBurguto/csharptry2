@@ -18,16 +18,20 @@ if (double.TryParse(secondNumber, out var y)) //check if can convert second inpu
 else
 {
     Console.WriteLine("Wrong input, program is finished");
+
 }
 if (y == 0)
-    {
-        Console.WriteLine("It's forbidden to divide with zero!!!");
-    }
-else {
-    if (y != 0 & x != 0)
 {
-    double result = x / y;
-    Console.WriteLine(result);
-    
+    Console.WriteLine("It's forbidden to divide with zero!!!");
 }
-}    
+else
+{
+    if (x != 0)
+    {
+        double result = x / y;
+        Console.WriteLine("the private is");
+        Console.WriteLine(result);
+    }
+    else { Console.WriteLine("0"); }
+}
+
