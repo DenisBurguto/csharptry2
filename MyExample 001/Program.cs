@@ -1,4 +1,4 @@
-﻿// user should input two numbers to get their private
+﻿// user should input two numbers to get division result
 Console.WriteLine("Please input first number");
 string firstNumber = Console.ReadLine();
 Console.WriteLine("Please input second number");
@@ -12,7 +12,7 @@ if (double.TryParse(firstNumber, out var x) & (double.TryParse(secondNumber, out
     else
     {
         double result = x / y;
-        Console.WriteLine("the private is");
+        Console.WriteLine("the division result is");
         Console.WriteLine(result);
     }
 }
