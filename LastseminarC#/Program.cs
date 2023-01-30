@@ -109,7 +109,7 @@ int SumOfDigits(int num){
 Console.Write(SumOfDigits(123));
 /*
 //Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
-void ShowNum(int m, int n)
+void ShowNum(int m, int n). // в таком виде выводит от m  до n либо по вострастанию либо по убыванию 
 {
     if (m > n)
     {
@@ -126,6 +126,27 @@ void ShowNum(int m, int n)
 Console.WriteLine();
 ShowNum(10, 15);
 */
+/*
+//Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
+void ShowNum(int m, int n). // а в таком виде выводит от m  до n либо всегда!!! по восрастанию не зависимо что больше на входе
+    if (m > n)
+    {
+        ShowNum(m - 1, n);
+        Console.Write(m + " ");
+    }
+    else if (n > m)
+    {
+        ShowNum(m, n - 1);
+        Console.Write(n + " ");
+    }
+    else Console.Write(n + " ");
+}
+Console.WriteLine();
+ShowNum(10, 15);
+*/
+
+
+
 
 //Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B( положительное и отрицательное).
 
