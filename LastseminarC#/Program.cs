@@ -105,25 +105,29 @@ int SumOfDigits(int num){
     if(num !=0) return SumOfDigits(num/10)+ num%10;
     else return 0;
 }
-/*
+
 Console.Write(SumOfDigits(123));
+*/
 /*
 //Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
 void ShowNum(int m, int n). // в таком виде выводит от m  до n либо по вострастанию либо по убыванию 
 {
     if (m > n)
     {
-        Console.Write(m + " ");
+      
         ShowNum(m - 1, n);
+        Console.Write(m + " ");
     }
     else if (n > m)
     {
+        
         ShowNum(m, n - 1);
         Console.Write(n + " ");
     }
     else Console.Write(n + " ");
 }
 Console.WriteLine();
+<<<<<<< HEAD
 ShowNum(10, 15);
 */
 /*
@@ -146,6 +150,9 @@ ShowNum(10, 15);
 */
 
 
+=======
+ShowNum(44, 15);
+>>>>>>> 64ed13b (bootcamp)
 
 
 //Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B( положительное и отрицательное).
@@ -158,3 +165,191 @@ double AtoBdegree(double a, int b)
 }
 
 Console.WriteLine(AtoBdegree(2, -3));
+<<<<<<< HEAD
+=======
+
+void ShowNumbers(int m, int n)
+{
+    Console.Write(m + " ");
+    if (m < n) ShowNumbers(m + 1, n); 
+    if (m > n) ShowNumbers(m - 1, n);
+}
+ShowNumbers(44, 10);
+*/
+/*
+
+string[] start = {"hello", "2", "world", ":-)"};
+
+Console.WriteLine( start[1].Length); 
+Array.Resize(ref start, 3);
+Console.WriteLine( "[" + String.Join(", ", start) + "]" ); 
+
+int[] test = new int[0];
+Console.WriteLine( "[" + String.Join(", ", test) + "]" ); 
+*/
+
+
+
+string AddBinary(string a, string b)
+{
+    string result = String.Empty;
+    int registry = 0;
+    if (b.Length >= a.Length)
+    {
+        for (int i = a.Length - 1, j = b.Length - 1; i >= 0; i--, j--)
+        {
+            if (registry == 0)
+            {
+                if (a[i] == b[j] && b[j] == '0')
+                {
+                    result = result.Insert(0, "0");
+                    registry = 0;
+                }
+                else if (a[i] == b[j] && b[j] == '1')
+                {
+                    result = result.Insert(0, "0");
+                    registry = 1;
+                }
+                else
+                {
+                    result = result.Insert(0, "1");
+                    registry = 0;
+
+                }
+            }
+            else if (registry == 1)
+            {
+                if (a[i] == b[j] && b[j] == '0')
+                {
+                    result = result.Insert(0, "1");
+                    registry = 0;
+                }
+                else if (a[i] == b[j] && b[j] == '1')
+                {
+                    result = result.Insert(0, "1");
+                    registry = 1;
+                }
+                else
+                {
+                    result = result.Insert(0, "0");
+                    registry = 1;
+
+                }
+            }
+        }
+        
+
+        for (int j = b.Length - a.Length-1; j >= 0; j--)
+        {
+            if (registry == 0)
+            {
+                result = result.Insert(0, b[j].ToString());
+                registry = 0;
+            }
+            if (registry == 1)
+            {
+
+                if (b[j] == '0')
+                {
+                    result = result.Insert(0, "1");
+                    registry = 0;
+                }
+                else
+                {
+                    result = result.Insert(0, "0");
+                    registry = 1;
+                }
+            }
+
+        }
+
+
+
+    }
+    else{
+          for (int i = a.Length - 1, j = b.Length - 1; j >= 0; i--, j--)
+        {
+            if (registry == 0)
+            {
+                if (a[i] == b[j] && b[j] == '0')
+                {
+                    result = result.Insert(0, "0");
+                    registry = 0;
+                }
+                else if (a[i] == b[j] && b[j] == '1')
+                {
+                    result = result.Insert(0, "0");
+                    registry = 1;
+                }
+                else
+                {
+                    result = result.Insert(0, "1");
+                    registry = 0;
+
+                }
+            }
+            else if (registry == 1)
+            {
+                if (a[i] == b[j] && b[j] == '0')
+                {
+                    result = result.Insert(0, "1");
+                    registry = 0;
+                }
+                else if (a[i] == b[j] && b[j] == '1')
+                {
+                    result = result.Insert(0, "1");
+                    registry = 1;
+                }
+                else
+                {
+                    result = result.Insert(0, "0");
+                    registry = 1;
+
+                }
+            }
+        }
+        
+
+        for (int i = a.Length - b.Length-1; i >= 0; i--)
+        {
+            if (registry == 0)
+            {
+                result = result.Insert(0, a[i].ToString());
+                registry = 0;
+            }
+            if (registry == 1)
+            {
+
+                if (a[i] == '0')
+                {
+                    result = result.Insert(0, "1");
+                    registry = 0;
+                    Console.WriteLine(a[i]);
+                }
+                else
+                {
+                    result = result.Insert(0, "0");
+                    registry = 1;
+                }
+            }
+
+        }
+
+
+
+    }
+
+
+
+if (registry == 1) result= result.Insert(0, "1");
+Console.WriteLine(result);
+
+
+return result;
+}
+string a = "101111";
+string b = "10";
+//string a = "1111111110100000100100110110010000010101111011011001101110111111111101000000101111001110001111100001101";
+//string b = "110101001011101110001111100110001010100001101011101010000011011011001011101111001100000011011110011";
+AddBinary(a, b);
+>>>>>>> 64ed13b (bootcamp)
